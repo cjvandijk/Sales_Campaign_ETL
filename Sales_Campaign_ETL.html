@@ -13181,7 +13181,7 @@ div#notebook {
         
     <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">fl</span><span class="p">,</span> <span class="n">index_col</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">header</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
     <span class="n">df</span><span class="p">[</span><span class="s1">&#39;Campaign&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">file_details</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
-    <span class="k">if</span> <span class="n">file_details</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;cmdm&quot;</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">file_details</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;dmdc&quot;</span><span class="p">:</span>
         <span class="n">df</span><span class="p">[</span><span class="s1">&#39;Campaign Type&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">file_details</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>  <span class="c1"># This campaign has sub-types</span>
         <span class="k">try</span><span class="p">:</span>                                   <span class="c1"># and may or may not have a date</span>
             <span class="n">camp_date</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">strptime</span><span class="p">(</span><span class="n">file_details</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;.&quot;</span><span class="p">)[</span><span class="mi">0</span><span class="p">],</span> <span class="s2">&quot;%m</span><span class="si">%d</span><span class="s2">%Y&quot;</span><span class="p">)</span>
@@ -13280,7 +13280,7 @@ div#notebook {
       <td>Mapsy Inc</td>
       <td>1/19/2016 19:03</td>
       <td>1/19/2016 18:36</td>
-      <td>cmdm</td>
+      <td>dmdc</td>
       <td>allverticals</td>
       <td>2018-06-04</td>
     </tr>
@@ -13298,7 +13298,7 @@ div#notebook {
       <td>Maxicom Global</td>
       <td>1/19/2016 19:32</td>
       <td>1/19/2016 18:27</td>
-      <td>cmdm</td>
+      <td>dmdc</td>
       <td>allverticals</td>
       <td>2018-06-04</td>
     </tr>
@@ -13316,7 +13316,7 @@ div#notebook {
       <td>Harliquin Inc</td>
       <td>2/24/2016 18:21</td>
       <td>1/19/2016 18:34</td>
-      <td>cmdm</td>
+      <td>dmdc</td>
       <td>allverticals</td>
       <td>2018-06-04</td>
     </tr>
@@ -13334,7 +13334,7 @@ div#notebook {
       <td>Peripheral Subjects</td>
       <td>2/9/2016 19:52</td>
       <td>1/19/2016 18:28</td>
-      <td>cmdm</td>
+      <td>dmdc</td>
       <td>allverticals</td>
       <td>2018-06-04</td>
     </tr>
@@ -13352,7 +13352,7 @@ div#notebook {
       <td>Mapsy Inc</td>
       <td>1/19/2016 19:03</td>
       <td>1/19/2016 18:36</td>
-      <td>cmdm</td>
+      <td>dmdc</td>
       <td>allverticals</td>
       <td>2018-06-04</td>
     </tr>
@@ -13547,7 +13547,7 @@ div#notebook {
       <td>Maxicom Global</td>
       <td>1/19/2016 19:32</td>
       <td>1/19/2016 18:27</td>
-      <td>cmdm</td>
+      <td>dmdc</td>
       <td>allverticals</td>
       <td>2018-06-04</td>
     </tr>
@@ -13566,7 +13566,7 @@ div#notebook {
       <td>Peripheral Subjects</td>
       <td>2/9/2016 19:52</td>
       <td>1/19/2016 18:28</td>
-      <td>cmdm</td>
+      <td>dmdc</td>
       <td>allverticals</td>
       <td>2018-06-04</td>
     </tr>
@@ -13595,7 +13595,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[7]:</div>
+<div class="prompt input_prompt">In&nbsp;[5]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">full_df</span> <span class="o">=</span> <span class="n">full_df</span><span class="o">.</span><span class="n">drop_duplicates</span><span class="p">(</span><span class="n">subset</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;Owner ID&#39;</span><span class="p">,</span> <span class="s1">&#39;Campaign&#39;</span><span class="p">,</span> <span class="s1">&#39;Email&#39;</span><span class="p">],</span> <span class="n">keep</span><span class="o">=</span><span class="s1">&#39;first&#39;</span><span class="p">)</span>
@@ -13617,33 +13617,20 @@ div#notebook {
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[7]:</div>
+    <div class="prompt output_prompt">Out[5]:</div>
 
 
 
 
 <div class="output_text output_subarea output_execute_result">
 <pre>Owner ID         Campaign
-Claudia Franken  cmdm        1
-Fred Crew        cmdm        1
+Claudia Franken  dmdc        1
+Fred Crew        dmdc        1
 Name: Email, dtype: int64</pre>
 </div>
 
 </div>
 
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span> 
-</pre></div>
-
-    </div>
 </div>
 </div>
 
